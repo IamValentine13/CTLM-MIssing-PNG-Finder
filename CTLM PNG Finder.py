@@ -68,4 +68,6 @@ for folder in folders:
             for fhand in filenames:
                 if int(fhand[:-4]) in range(minrange, maxrange):
                     try : shutil.copyfile(srcpath + fhand, destpath + fhand)
-                    except FileNotFoundError: os.mkdir(destpath)
+                    except FileNotFoundError:
+                        os.mkdir(destpath)
+                        shutil.copyfile(srcpath + fhand, destpath + fhand)
