@@ -60,8 +60,8 @@ path = (r'C:\Users\\' + user + '\AppData\Roaming\Factorio' +
         '\script-output\CTLM\Positions\position\\')
 
 for folder in folders:
-    srcpath = path + folder
-    destpath = path + 'Missing' + folder
+    srcpath = path + 'position\\'+ folder
+    destpath = path + 'MissingPNGs\\' + 'Missing' + folder
     for folderName, subfolders, filenames in os.walk(srcpath):
         for minrange in rangedict:
             maxrange = rangedict.get(minrange)
