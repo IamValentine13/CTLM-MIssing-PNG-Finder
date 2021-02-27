@@ -66,6 +66,6 @@ for folder in folders:
         for minrange in rangedict:
             maxrange = rangedict.get(minrange)
             for fhand in filenames:
-                if int(fhand[1:5]) in range(minrange, maxrange):
+                if int(fhand[:-4]) in range(minrange, maxrange):
                     try : shutil.copyfile(srcpath + fhand, destpath + fhand)
                     except FileNotFoundError: os.mkdir(destpath)
